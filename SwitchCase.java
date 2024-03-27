@@ -1,11 +1,11 @@
-public class SwitchCase {
-    /*
+  /*
      * How Switch case works:
      *  switch(month) -> month is a variable that is compared with each case value, for ex 1 in case 1
      *  The block of the case that matches month value will be executed
      *  If no case matches the month value, the block of the defualt case will be executed
      */
     
+public class SwitchCase {
     public static void main(String[]args){
         System.out.println("This is a Switch Case conditon implementation.");
         
