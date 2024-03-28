@@ -15,7 +15,7 @@ public class Enum {
         int numb = sc.nextInt();
 
         if(numb >= 90 && numb <= 100){
-            Grades letterGradeA = Grades.A;
+            Grades letterGradeA = Grades.A;  // enum usage
             System.out.printf("Your letter grade is %s", letterGradeA);
         }else if(numb >= 80 && numb < 90){
             Grades letterGradeB = Grades.B;
