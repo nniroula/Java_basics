@@ -2,7 +2,10 @@
 * Arrays in Java -> 1D, 2D
 */
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Arrays; // use Arrays.toString(arrName) to print array
+import java.util.Scanner;
 
 class ArrayConcepts{
     /**
@@ -43,6 +46,47 @@ class ArrayConcepts{
         }
         System.out.println();
     }
+
+    /**
+     * takes input file name from user, reads that input file and adds odd numbers to an array
+     * @return elements count of partially filled array
+     */
+    public int getElementsCountOfPartiallyFilledArray(){
+        int currentSize = 0;
+        int [] odds = new int[5];
+
+        // take user input in the form ot txt file
+        Scanner console = new Scanner(System.in);
+        File inFile;
+        Scanner fileScanner;
+
+        // get input file name from a user
+        System.out.print("Enter your data file name: ");
+        String inputFileName = console.next();
+        System.out.println();
+ 
+        try{
+            inFile = new File(inputFileName); // file object
+            fileScanner = new Scanner(inFile); // read the file
+
+            while(fileScanner.hasNextInt()){
+                if(currentSize < odds.length){
+                    int inputNum = fileScanner.nextInt(); // get input from the file
+                    if(inputNum % 2 != 0){ // add only odd numbers to the array
+                        odds[currentSize] = inputNum;
+                        currentSize++;
+                    }
+                }
+            }
+        }catch(FileNotFoundException fnfe){
+            System.out.println("Your file is not found");
+        }
+        finally{
+           console.close();
+        }
+
+        return currentSize;
+    }
 }
 
 
@@ -72,5 +116,11 @@ public class ArraysInJava {
         System.out.println();
         System.out.println("useForEachLoop method output ..........");
         ac.useForEachLoop();
+
+        // getElementsCountOfPartiallyFilledArray
+        System.out.println();
+        System.out.println("getElementsCountOfPartiallyFilledArray method output ..........");
+        int count = ac.getElementsCountOfPartiallyFilledArray();
+        System.out.println("Current size of an array is " + count);
     }
 }
