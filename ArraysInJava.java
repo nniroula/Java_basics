@@ -110,6 +110,16 @@ class ArrayConcepts{
         }
         return maxNumber;
     }
+
+    // method to swap elements
+
+    // method for linear search
+
+    // method for removing an element from ordered and unordered arrays
+
+    // method for inserting an element in ordered and unordered arrays
+
+    // method of copy an arrays
 }
 
 
