@@ -16,7 +16,5 @@ public class Constant {
         //age = 31; // you cannot reassign the value to age variable
         System.out.println(NAME);
        // NAME = "NK";  // you cannot re-assign value to final constant variable
-
-        
     }
 }
