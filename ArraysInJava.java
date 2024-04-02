@@ -87,6 +87,29 @@ class ArrayConcepts{
 
         return currentSize;
     }
+
+    /**
+     * calculates square of a given number and appends to an array
+     * @return array of numbers
+     */
+    public int[] getNumSquares(){
+        int evens [] = new int[6];
+        for(int i = 1; i <= evens.length; i++){
+            evens[i - 1] = i * i; // or Math.pow(i, 2);
+        }
+        return evens;
+    }
+
+    public int getMaxValue(int arr[]){
+        int maxNumber = arr[0];
+
+        for(int num: arr){
+            if(num > maxNumber){
+                maxNumber = num;
+            }
+        }
+        return maxNumber;
+    }
 }
 
 
@@ -122,5 +145,18 @@ public class ArraysInJava {
         System.out.println("getElementsCountOfPartiallyFilledArray method output ..........");
         int count = ac.getElementsCountOfPartiallyFilledArray();
         System.out.println("Current size of an array is " + count);
+
+        //evenNumSquares
+        int [] evens = ac.getNumSquares();
+        System.out.println();
+        System.out.println("evenNumSquares method output ............");
+        System.out.println(Arrays.toString(evens));
+
+        //getMaxValue
+        System.out.println();
+        System.out.println("getMaxValue method output ........");
+        int [] intNUms = {2, 4, 3, 0, 36, 18};
+        int maxValue = ac.getMaxValue(intNUms);
+        System.out.println("Maximum value in given array is " + maxValue);
     }
 }
