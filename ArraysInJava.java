@@ -111,6 +111,27 @@ class ArrayConcepts{
         return maxNumber;
     }
 
+    public int[] getUserInputCreateArray(){
+        Scanner console = new Scanner(System.in);
+        int [] inputs = new int[3];
+        System.out.print("Enter 3 numbers: ");
+        int num = console.nextInt();
+        System.out.println(num);
+       
+      // int numbers = console.nextInt();
+      // System.out.println(numbers);
+
+      
+       //System.out.println(console.hasNextInt());
+
+        for(int i = 0; i < inputs.length; i++){
+            //System.out.println(i + " " + inputs[i]);
+            inputs[i] = console.nextInt();
+        }
+        console.close();
+        return inputs;
+    }
+
     // method to swap elements
 
     // method for linear search
@@ -168,5 +189,11 @@ public class ArraysInJava {
         int [] intNUms = {2, 4, 3, 0, 36, 18};
         int maxValue = ac.getMaxValue(intNUms);
         System.out.println("Maximum value in given array is " + maxValue);
+
+        //getUserInputCreateArray
+        System.out.println();
+        System.out.println("getUserInputCreateArray method .....");
+        int []nums = ac.getUserInputCreateArray();
+        System.out.println(Arrays.toString(nums));
     }
 }
